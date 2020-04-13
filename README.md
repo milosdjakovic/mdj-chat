@@ -6,7 +6,9 @@
 * Socket.io
 
 Change port number inside './.env' file;
+ 
+Download and run: ```npm init```
 
 ### NPM scripts 
-* ```console npm run start```
-* ```console npm run dev```
+* ```npm run start```
+* ```npm run dev```
