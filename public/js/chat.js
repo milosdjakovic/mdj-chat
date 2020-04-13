@@ -1,5 +1,13 @@
 const chatMessages = document.querySelector("#chat-messages");
 const chatForm = document.querySelector("#chat-form");
+const sidePanelToggleButton = document.querySelector('#side-panel-toggle-button');
+const sidePanel = document.querySelector('#side-panel');
+
+function toggleSidePanel() {
+  sidePanel.classList.toggle('hidden')
+}
+
+sidePanelToggleButton.addEventListener('click', toggleSidePanel);
 
 // Get username and group from URL
 const { username, group } = Qs.parse(location.search, {
