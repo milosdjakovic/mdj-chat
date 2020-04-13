@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="./styles/output.css" />
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.9.3/qs.min.js"
+      integrity="sha256-lSPkSu/D04IeqWOhTgTf5tLzNFEc37oNE9ysGS9PdK4="
+      crossorigin="anonymous"
+      defer
+    ></script>
+    <script
+      src="https://kit.fontawesome.com/a18323741a.js"
+      crossorigin="anonymous"
+      defer
+    ></script>
+    <script src="/socket.io/socket.io.js" defer></script>
+    <script src="./js/chat.js" defer></script>
+
+    <title>MDJ-Chat</title>
+  </head>
+  <body>
+    <div class="flex flex-col w-screen h-screen text-gray-800">
+      <div
+        class="flex justify-between items-center text-gray-800 bg-blue-900 p-4 border-b-2 border-gray-400"
+      >
+        <h1 class="text-2xl text-gray-200">
+          <i class="far fa-keyboard text-3xl mr-1"></i> MDJ-Chat
+        </h1>
+        <a
+          href="/"
+          class="text-blue-600 bg-gray-200 rounded-full px-4 py-1 hover:bg-blue-400 hover:text-gray-200"
+        >
+          <i class="fas fa-sign-out-alt mr-2 block transform rotate-180"></i>
+          Leave group</a
+        >
+      </div>
+      <div id="app" class="h-full w-full flex">
+        <div id="sidebar" class="border-r-2 border-gray-400 w-64 px-8 py-6">
+          <div id="group">
+            <h3 class="font-semibold text-m">
+              <i class="fas fa-comments text-blue-600 text-2xl mr-1"></i> Group:
+            </h3>
+            <h4
+              id="group-name"
+              class="mt-2 py-2 px-4 text-lg font-bold text-blue-600 bg-blue-100 rounded-lg"
+            ></h4>
+          </div>
+          <div class="mt-4">
+            <h3 class="font-semibold text-m mb-2">
+              <i class="fas fa-users text-blue-600 text-2xl mr-1"></i> Users:
+            </h3>
+            <ul id="online-users" class="ml-4"></ul>
+          </div>
+        </div>
+        <div id="chat" class="flex flex-col h-auto w-full">
+          <div
+            id="chat-messages"
+            class="h-0 flex-grow overflow-y-scroll pt-4 px-4"
+          ></div>
+          <form id="chat-form" class="relative flex h-10 mx-4 mb-4">
+            <input
+              type="text"
+              id="message"
+              placeholder="Enter your message"
+              required="required"
+              autocomplete="off"
+              class="flex-grow h-full pl-6 pr-16 rounded-full bg-gray-100 border-2 border-gray-400 outline-none outline-none focus:bg-blue-100 focus:border-blue-200"
+            />
+            <button
+              type="submit"
+              id="send-btn"
+              class="absolute right-0 h-full px-6 rounded-full text-blue-600 hover:text-gray-200 hover:bg-blue-600"
+            >
+              <i class="fas fa-paper-plane text-lg mr-1"></i>
+              Send
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <script
+      src="https://kit.fontawesome.com/a18323741a.js"
+      crossorigin="anonymous"
+      defer
+    ></script>
+    <script src="/socket.io/socket.io.js" defer></script>
+    <script src="./js/script.js" defer></script>
+
+    <link rel="stylesheet" href="./styles/output.css" />
+
+    <title>MDJ-Chat — Login</title>
+  </head>
+  <body>
+    <div
+      id="app"
+      class="flex flex-col p-6 justify-center items-center w-screen h-screen text-gray-800 bg-blue-900"
+    >
+      <div
+        class="flex flex-col items-stretch w-full max-w-sm rounded-lg bg-gray-200 shadow-base"
+      >
+        <div class="border-b-2 border-gray-400 p-4">
+          <h1 class="text-2xl text-blue-600">
+            <i class="far fa-keyboard text-3xl mr-1"></i> 
+            <span>MDJ-Chat</span>
+          </h1>
+        </div>
+        <form action="chat.html" class="flex flex-col item-stretch py-4 px-6">
+          <label for="username">
+            <i class="fas fa-user text-blue-600 mr-1"></i>
+            Username:</label>
+          <input
+            type="text"
+            name="username"
+            id="username"
+            placeholder="Enter username..."
+            required
+            class="placeholder-gray-600 mt-1 mb-2 px-4 py-1 rounded-full bg-gray-100 border-2 border-gray-400 outline-none outline-none focus:bg-blue-100 focus:border-blue-200"
+          />
+
+          <p>
+            <i class="fas fa-users text-blue-600 mr-1"></i>
+            Group:
+          </p>
+          <div
+            id="group-selector"
+            class="flex flex-col justify-stretch overflow-y-scroll h-32 border-2 mt-1 mb-2 rounded-lg bg-gray-100 border-2 border-gray-400"
+          >
+            <input
+              id="group-1"
+              type="radio"
+              name="group"
+              class="hidden"
+              value="Group 1"
+              checked
+            />
+            <label
+              for="group-1"
+              class="py-1 px-4 cursor-pointer hover:bg-blue-200"
+              >Group 1</label
+            >
+            <input
+              id="group-2"
+              type="radio"
+              name="group"
+              class="hidden"
+              value="Group 2"
+            />
+            <label
+              for="group-2"
+              class="py-1 px-4 cursor-pointer hover:bg-blue-200"
+              >Group 2</label
+            >
+            <input
+              id="group-3"
+              type="radio"
+              name="group"
+              class="hidden"
+              value="Group 3"
+            />
+            <label
+              for="group-3"
+              class="py-1 px-4 cursor-pointer hover:bg-blue-200"
+              >Group 3</label
+            >
+            <input
+              id="group-4"
+              type="radio"
+              name="group"
+              class="hidden"
+              value="Group 4"
+            />
+            <label
+              for="group-4"
+              class="py-1 px-4 cursor-pointer hover:bg-blue-200"
+              >Group 4</label
+            >
+            <input
+              id="group-5"
+              type="radio"
+              name="group"
+              class="hidden"
+              value="Group 5"
+            />
+            <label
+              for="group-5"
+              class="py-1 px-4 cursor-pointer hover:bg-blue-200"
+              >Group 5</label
+            >
+          </div>
+
+          <button
+            type="submit"
+            class="self-end text-blue-100 bg-blue-600 rounded-full px-8 py-1 hover:bg-blue-400 hover:text-gray-200"
+          >
+          <i class="fas fa-sign-out-alt mr-1 block transform"></i>
+            Login
+          </button>
+        </form>
+      </div>
+    </div>
+  </body>
+  <style>
+    input[type="radio"]:checked + label {
+      color: #ebf8ff;
+      background: #3182ce;
+    }
+
+    input[type="radio"] + label::before {
+      font-family: "FontAwesome";
+      content: "\f111";
+      margin-right: 6px;
+    }
+    input[type="radio"]:checked + label::before {
+      font-family: "FontAwesome";
+      content: "\f058";
+      margin-right: 6px;
+    }
+  </style>
+</html>
